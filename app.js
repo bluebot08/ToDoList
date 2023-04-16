@@ -22,9 +22,9 @@ app.get("/", function (req, res) {
   var today = new Date();
 
   if (today.getDay() === 6 || today.getDay() === 0)
-    res.send("Yay it's the weekend!");
+    res.write("<h1>Yay it's the weekend!</h1>");
   else {
-    res.send("Boo! I have to work!");
+    res.sendFile(__dirname + "/index.html");
   }
 });
 
