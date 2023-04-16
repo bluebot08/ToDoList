@@ -19,7 +19,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Get route
 
 app.get("/", function (req, res) {
-  res.send("Hello, World!");
+  var today = new Date();
+
+  if (today.getDay() === 6 || today.getDay() === 0)
+    res.send("Yay it's the weekend!");
+  else {
+    res.send("Boo! I have to work!");
+  }
 });
 
 // Set express to listen to port 3000 with message
