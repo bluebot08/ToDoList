@@ -16,7 +16,7 @@ app.use("/public", express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Get function
+// Get route
 
 app.get("/", function (req, res) {
   res.send("Hello, World!");
