@@ -16,6 +16,10 @@ app.use("/public", express.static("public"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Setting up EJS
+
+app.set("view engine", "ejs");
+
 // Get route
 
 app.get("/", function (req, res) {
