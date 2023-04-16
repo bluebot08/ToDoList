@@ -50,6 +50,7 @@ app.get("/", function (req, res) {
       break;
     default:
       // handle unexpected input
+      console.log("Error: current day is equal to: " + currentDay);
       break;
   }
 
