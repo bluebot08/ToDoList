@@ -8,6 +8,10 @@ const https = require("https");
 
 const app = express();
 
+// Variables
+
+let items = [];
+
 // Set express to serve static pages and images
 
 // app.use("/public", express.static("public"));
@@ -34,12 +38,18 @@ app.get("/", function (req, res) {
   var day = today.toLocaleDateString("en-us", options);
   var dayJapan = todayJapan.toLocaleDateString("ja-jp", options);
 
-  res.render("list", { kindOfDay: day, kindOfDayJapan: dayJapan });
+  res.render("list", {
+    kindOfDay: day,
+    kindOfDayJapan: dayJapan,
+    newListItem: items,
+  });
 });
 
 // Post
 app.post("/", function (req, res) {
-  console.log(req.body.newItem);
+  let item = req.body.newItem;
+  items.push(item);
+  res.redirect("/");
 });
 
 // Set express to listen to port 3000 with message
