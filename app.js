@@ -37,6 +37,11 @@ app.get("/", function (req, res) {
   res.render("list", { kindOfDay: day, kindOfDayJapan: dayJapan });
 });
 
+// Post
+app.post("/", function (req, res) {
+  console.log(req.body.newItem);
+});
+
 // Set express to listen to port 3000 with message
 
 app.listen(3000, function () {
