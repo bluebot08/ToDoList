@@ -41,7 +41,7 @@ app.get("/", function (req, res) {
   res.render("list", {
     kindOfDay: day,
     kindOfDayJapan: dayJapan,
-    newListItem: items,
+    newListItems: items,
   });
 });
 
