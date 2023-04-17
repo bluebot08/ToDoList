@@ -12,12 +12,11 @@
     <!-- Japanese -->
     <h1><%= kindOfDayJapan %></h1>
 
+    <h4>What I need to do today.</h4>
     <ul>
-      <li>Buy Food</li>
-      <li>Cook Food</li>
-      <li>Clean</li>
-      <li>Study</li>
-      <li><%= newListItem %></li>
+      <% for (var i = 0; i < newListItems.length; i++) { %>
+      <li><%= newListItems[i] %></li>
+      <% } %>
     </ul>
 
     <form class="" action="/" method="post">
